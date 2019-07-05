@@ -18,9 +18,9 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent"
     ],
-    install_requires=['funcgenom'],
+    install_requires=[],
     entry_points={
-        'console_scripts': ['pyQuASAR-download=pyQuASAR.download:main',]
+        # 'console_scripts': []
     },
     include_package_data=True
 )

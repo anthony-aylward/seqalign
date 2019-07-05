@@ -1,8 +1,7 @@
-"""Easy management of sequence alignment data
+"""Manage sequence alignments
 
-A mini-module for managing sequence alignment data. The language of this module
-treats a "sequence alignment" as an abstraction, but mostly handles it as a BAM 
-file stored in memory.
+This module treats a "sequence alignment" as an abstraction, but mostly handles
+it as a BAM file stored in memory.
 
 Examples
 --------
@@ -27,12 +26,20 @@ SequenceAlignment
 Low-level classes
 -----------------
 BWA
-    commands for running bwa
+    wrapper for bwa
+Bowtie2
+    wrapper for botwie2
+RemoveDuplicates
+    dedupper based on samtools view
 
 Functions
 ---------
-file_format_from_extension
-    infer the format of a sequencing data file from its extension
+samtools_fixmate
 median_read_length
     determine the median length of reads in a fasta or fastq file
 """
+
+from seqalign.seqalign import (
+    SequenceAlignment, BWA, Bowtie2, RemoveDuplicates, samtools_fixmate,
+    get_median_read_length, samtools_merge, merge, trim_galore
+)

@@ -1,6 +1,6 @@
 # seqalign
 
-Wrap quasar for pipelines
+Manage sequence alignments
 
 ## Installation
 
