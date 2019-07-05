@@ -5,7 +5,7 @@ it as a BAM file stored in memory.
 
 Examples
 --------
-with SequenceAlignment(<path to input bam or fastq file>) as sa:
+with SequenceAlignment(<path to input BAM or FASTQ file>) as sa:
     sa.cleans_up_bam = False
     sa.remove_supplementary_alignments()
     sa.samtools_sort(memory_limit=10)
@@ -16,7 +16,7 @@ Notes
 -----
 The "input_file" argument should be a string for single-end reads or for
 data that is already aligned. For raw paired-end reads, it should be a tuple 
-containing two strings giving the paths to the two fasta / fastq files.
+containing two strings giving the paths to the two FASTA / FASTQ files.
 
 High-level classes
 ------------------
