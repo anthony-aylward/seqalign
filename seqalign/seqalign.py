@@ -229,7 +229,7 @@ class SequenceAlignment():
                     (
                         'samtools', 'view',
                         '-bhq', str(self.mapping_quality),
-                        '-@', str(self.processes),
+                        '-@', str(self.processes - 1),
                         input_file
                     ),
                     stdout=subprocess.PIPE,
@@ -701,7 +701,7 @@ class BWA():
                         (
                             'samtools', 'view',
                             '-Sbq', str(sequence_alignment.mapping_quality),
-                            '-@', str(sequence_alignment.processes)
+                            '-@', str(sequence_alignment.processes - 1)
                         ),
                         stdin=bwa_aln_sampe.stdout,
                         stdout=subprocess.PIPE,
@@ -736,7 +736,7 @@ class BWA():
                                 '-bhq', str(
                                     sequence_alignment.mapping_quality
                                 ),
-                                '-@', str(sequence_alignment.processes)
+                                '-@', str(sequence_alignment.processes - 1)
                             ),
                             stdin=bwa_aln_samse.stdout,
                             stdout=subprocess.PIPE,
@@ -775,7 +775,7 @@ class BWA():
                 (
                     'samtools', 'view',
                     '-bhq', str(sequence_alignment.mapping_quality),
-                    '-@', str(sequence_alignment.processes)
+                    '-@', str(sequence_alignment.processes - 1)
                 ),
                 stdin=bwa_mem.stdout,
                 stdout=subprocess.PIPE,
@@ -863,7 +863,7 @@ class RemoveDuplicates():
               'samtools', 'view',
               '-bh',
               '-F', '0x400',
-              '-@', str(self.processes)
+              '-@', str(self.processes - 1)
             ),
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
