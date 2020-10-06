@@ -827,7 +827,7 @@ class Bowtie2():
                 (
                     'samtools', 'view',
                     '-bhq', str(sequence_alignment.mapping_quality),
-                    '-@', str(sequence_alignment.processes)
+                    '-@', str(sequence_alignment.processes - 1)
                 ),
                 stdin=bowtie2.stdout,
                 stdout=subprocess.PIPE,
