@@ -18,7 +18,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent"
     ],
-    install_requires=['biopython', 'pyhg19', 'tempfifo'],
+    install_requires=['biopython', 'pyhg19', 'tempfifo', 'cutadapt'],
     entry_points={
         # 'console_scripts': []
     }
